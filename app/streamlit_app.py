@@ -25,6 +25,17 @@ from .comparison import compare_equipment
 from .reporting import results_to_dataframe, write_results_to_excel, generate_plain_english_summary
 
 
+
+import os
+import sys
+
+# Remove local 'altair' stub directory from sys.path to ensure pip-installed altair is used
+this_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(this_dir, '..'))
+altair_stub_path = os.path.join(project_root, 'altair')
+if altair_stub_path in sys.path:
+    sys.path.remove(altair_stub_path)
+
 def main():
     st.set_page_config(page_title="QA/QC Equipment Compliance Checker", layout="wide")
     st.title("🔨 QA/QC Equipment Compliance Checker")
