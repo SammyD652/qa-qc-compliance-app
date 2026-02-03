@@ -19,10 +19,10 @@ from __future__ import annotations
 import streamlit as st
 import tempfile
 
-from .ocr import ocr_image, ocr_pdf, words_to_text
-from .extraction import parse_nameplate_text, parse_submittal_text
-from .comparison import compare_equipment
-from .reporting import results_to_dataframe, write_results_to_excel, generate_plain_english_summary
+from app.ocr import ocr_image, ocr_pdf, words_to_text
+from app.extraction import parse_nameplate_text, parse_submittal_text
+from app.comparison import compare_equipment
+from app.reporting import results_to_dataframe, write_results_to_excel, generate_plain_english_summary
 
 
 
